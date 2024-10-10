@@ -1,0 +1,48 @@
+<ion-header>
+  <ion-toolbar>
+    <ion-title>Actividad Física</ion-title>
+    <ion-buttons slot="end">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+  <!-- Lista de actividades -->
+  <ion-list>
+    <ion-list-header>
+      Historial de Actividades (Prueba)
+    </ion-list-header>
+
+    <ion-item *ngFor="let actividad of actividades">
+      <ion-label>
+        <h2>{{ actividad.type }}</h2>
+        <p>Duración: {{ actividad.duration }} minutos</p>
+        <p>Fecha: {{ actividad.date | date }}</p>
+
+        <!-- Botones de acción -->
+        <ion-buttons>
+          <ion-button color="tertiary" (click)="editActivity(actividad)">
+            <ion-icon slot="start" name="create-outline"></ion-icon>
+            Editar
+          </ion-button>
+          <ion-button color="danger" (click)="deleteActivity(actividad)">
+            <ion-icon slot="start" name="trash-outline"></ion-icon>
+            Eliminar
+          </ion-button>
+        </ion-buttons>
+
+      </ion-label>
+    </ion-item>
+  </ion-list>
+
+  <!-- Nueva actividad -->
+  <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+    <ion-fab-button color="primary" (click)="createActivity()">
+      <ion-icon name="add"></ion-icon>
+    </ion-fab-button>
+  </ion-fab>
+
+  <ion-button expand="block" routerLink="/home" class="inicio-button">Inicio</ion-button>
+</ion-content>

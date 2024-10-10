@@ -1,0 +1,17 @@
+.container {
+    padding: 16px;
+  }
+  
+  ion-card {
+    margin: 16px;
+    width: 100%; /* Ocupa todo el ancho disponible en pantallas pequeñas */
+  }
+  
+  @media (min-width: 768px) {
+    ion-card {
+      max-width: 600px;
+      margin: 32px auto;
+      width: auto;
+    }
+  }
+  
